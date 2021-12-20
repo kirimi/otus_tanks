@@ -2,8 +2,8 @@
 
 [![Tests](https://github.com/kirimi/otus_tanks/actions/workflows/tests.yml/badge.svg)](https://github.com/kirimi/otus_tanks/actions/workflows/tests.yml)
 
-##Домашнее задание  
-###Движение игровых объектов по полю.
+## Домашнее задание  
+### Движение игровых объектов по полю.
 
 Цель: Выработка навыка применения SOLID принципов на примере игр
 "Танки".
