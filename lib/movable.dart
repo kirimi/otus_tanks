@@ -11,7 +11,7 @@ abstract class IMovable {
 class MovableAdapter implements IMovable {
   MovableAdapter(this.uObject);
 
-  final UObject uObject;
+  final UObjectBase uObject;
 
   @override
   Vector2 get position => uObject.get('position');

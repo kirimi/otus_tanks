@@ -13,7 +13,7 @@ abstract class IRotable {
 class RotableAdapter implements IRotable {
   RotableAdapter(this.uObject);
 
-  final UObject uObject;
+  final UObjectBase uObject;
 
   @override
   int get direction => uObject.get('direction');

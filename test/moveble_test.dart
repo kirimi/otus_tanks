@@ -3,6 +3,8 @@ import 'package:tanks/uobject.dart';
 import 'package:test/test.dart';
 import 'package:vector_math/vector_math.dart';
 
+import 'uobjecy_mock.dart';
+
 void main() {
   test(
     'Для объекта, находящегося в точке (12, 5) и движущегося со скоростью (-7, 3) движение меняет положение объекта на (5, 8)',
@@ -45,14 +47,13 @@ void main() {
   test(
     'Попытка сдвинуть объект, у которого невозможно изменить положение в пространстве, приводит к ошибке',
     () {
-      final rotableObject = UObject();
-      rotableObject.set('direction', 0);
-      rotableObject.set('angularVelocity', 9);
-      rotableObject.set('maxDirection', 8);
+      // Создаем объект, который при попытке изменить
+      // его свойство выкидывает [StorageException]
+      final mockObject = UObjectMock();
 
-      final cmd = MoveCommand(MovableAdapter(rotableObject));
+      final cmd = MoveCommand(MovableAdapter(mockObject));
 
-      expect(() => cmd.execute(), throwsException);
+      expect(() => cmd.execute(), throwsA(TypeMatcher<StorageException>()));
     },
   );
 }
